@@ -34,7 +34,7 @@ class LivroServiceTest {
 	private static final String TITULO="O Senhor dos Anéis";
 	private static final Genero GENERO=Genero.FANTASIA;
 	private static final LocalDate DATA_DE_PUBLICACAO=LocalDate.of(1954, 7, 29);
-	private static final Integer ISBN=1216;
+	private static final String ISBN="1216";
 	private static final String SUMARIO="Uma épica história de aventura em um mundo fantástico, onde um hobbit deve destruir um anel poderoso.";
 	private Livro livro;
 	private Livro novoLivro;
@@ -57,7 +57,7 @@ class LivroServiceTest {
 		livro= new Livro(TITULO, GENERO, DATA_DE_PUBLICACAO, ISBN, SUMARIO);
 		livro.setId(ID);
 		livroOptional=Optional.of(livro);
-		novoLivro= new Livro("A Dança dos Dragões", Genero.FANTASIA, LocalDate.of(2005, 4, 12), 678345123, "Uma fantasia magnífica em um mundo cheio de mistérios e magia.");
+		novoLivro= new Livro("A Dança dos Dragões", Genero.FANTASIA, LocalDate.of(2005, 4, 12), "678345123", "Uma fantasia magnífica em um mundo cheio de mistérios e magia.");
 	}
 	@Test
 	void testFindAll() {

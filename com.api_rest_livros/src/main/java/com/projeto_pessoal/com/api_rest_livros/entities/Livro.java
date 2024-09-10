@@ -11,6 +11,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
@@ -33,7 +34,7 @@ public class Livro {
 	@NonNull
 	private LocalDate dataDePublicacao;
 	@NonNull
-	private Integer isbn;
+	private String isbn;
 	@NonNull
 	private String sumario;
 	
