@@ -5,6 +5,8 @@ import java.time.LocalDate;
 import com.projeto_pessoal.com.api_rest_livros.entities.enums.Genero;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -26,7 +28,8 @@ public class Livro {
 	@NonNull
 	private String titulo;
 	@NonNull
-	private Genero genre;
+	@Enumerated(EnumType.STRING)
+	private Genero genero;
 	@NonNull
 	private LocalDate dataDePublicacao;
 	@NonNull

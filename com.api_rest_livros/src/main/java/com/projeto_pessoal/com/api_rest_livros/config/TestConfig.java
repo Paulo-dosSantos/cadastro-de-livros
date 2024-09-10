@@ -21,7 +21,7 @@ public class TestConfig implements CommandLineRunner{
 	@Override
 	public void run(String... args) throws Exception {
 		/*Alguns desses dados estarão errados, pois servem apenas para teste*/
-		Livro livro1= new Livro("Coração negro", Genero.FANTASIA, LocalDate.of(2003, 05, 5), 4566, "x-mens viajam para um mundo alternativo para enfrentar seus maiores medos");
+		Livro livro1= new Livro("O Senhor dos Anéis", Genero.FANTASIA, LocalDate.of(1954, 7, 29), 1216, "Uma épica história de aventura em um mundo fantástico, onde um hobbit deve destruir um anel poderoso.");
 		livroRepository.save(livro1);
 		
 	}

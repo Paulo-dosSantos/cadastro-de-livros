@@ -31,13 +31,14 @@ public class LivroService {
 	public Livro update(int id, Livro novoLivro) {
 		Livro livro= repositorio.getReferenceById(id);
 		updateData(livro,novoLivro);
+		livro.setId(id);
 		return repositorio.save(livro);
 	}
 	private void updateData(Livro livro, Livro novoLivro) {
 		livro.setTitulo(novoLivro.getTitulo());
 		livro.setSumario(novoLivro.getSumario());
 		livro.setIsbn(novoLivro.getIsbn());
-		livro.setGenre(novoLivro.getGenre());
+		livro.setGenero(novoLivro.getGenero());
 		livro.setDataDePublicacao(novoLivro.getDataDePublicacao());
 		
 	}
