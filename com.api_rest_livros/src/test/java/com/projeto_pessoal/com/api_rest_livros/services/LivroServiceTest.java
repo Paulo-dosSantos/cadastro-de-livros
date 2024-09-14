@@ -65,12 +65,7 @@ class LivroServiceTest {
 		
 		List<Livro>livros= servico.findAll();
 		
-		assertNotNull(ID);
-		assertNotNull(TITULO);
-		assertNotNull(GENERO);
-		assertNotNull(DATA_DE_PUBLICACAO);
-		assertNotNull(ISBN);
-		assertNotNull(SUMARIO);
+		
 		assertEquals(1,livros.size());
 		assertEquals(Livro.class,livros.get(0).getClass());
 		
@@ -116,16 +111,16 @@ class LivroServiceTest {
 		when(repositorio.getReferenceById(ID)).thenReturn(livro);
 		when(repositorio.save(livro)).thenReturn(livro);
 		
-		Livro livro= servico.update(1, novoLivro);
+		Livro retorno= servico.update(1, novoLivro);
 		
 		assertNotNull(ID);
 		assertNull(novoLivro.getId());
-		assertEquals(livro.getClass(),novoLivro.getClass());
-		assertEquals(livro.getTitulo(),novoLivro.getTitulo());
-		assertEquals(ID,livro.getId());
-		assertEquals(livro.getDataDePublicacao(),novoLivro.getDataDePublicacao());
-		assertEquals(livro.getIsbn(),novoLivro.getIsbn());
-		assertEquals(livro.getGenero(),novoLivro.getGenero());
+		assertEquals(retorno.getClass(),novoLivro.getClass());
+		assertEquals(retorno.getTitulo(),novoLivro.getTitulo());
+		assertEquals(ID,retorno.getId());
+		assertEquals(retorno.getDataDePublicacao(),novoLivro.getDataDePublicacao());
+		assertEquals(retorno.getIsbn(),novoLivro.getIsbn());
+		assertEquals(retorno.getGenero(),novoLivro.getGenero());
 	
 	}
 	@Test
@@ -136,11 +131,6 @@ class LivroServiceTest {
 		
 		assertNotNull(ID);
 		
-		assertNotNull(TITULO);
-		assertNotNull(GENERO);
-		assertNotNull(DATA_DE_PUBLICACAO);
-		assertNotNull(ISBN);
-		assertNotNull(SUMARIO);
 		
 		assertEquals(Livro.class,livro.getClass());
 		

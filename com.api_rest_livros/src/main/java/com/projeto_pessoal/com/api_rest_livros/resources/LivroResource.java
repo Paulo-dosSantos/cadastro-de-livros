@@ -48,11 +48,11 @@ public class LivroResource {
 		return ResponseEntity.noContent().build();
 	}
 	@PutMapping(value="/{id}")
-	public ResponseEntity<Livro>update(@PathVariable int id, @RequestBody Livro livro){
+	public ResponseEntity<Livro>update(@PathVariable int id, @RequestBody Livro novoLivro){
 		
-		Livro novoLivro= servico.update(id, livro);
+		Livro livro= servico.update(id, novoLivro);
 		
-		return ResponseEntity.ok().body(novoLivro);
+		return ResponseEntity.ok().body(livro);
 		
 	}
 	@PostMapping
